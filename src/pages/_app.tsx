@@ -1,8 +1,7 @@
 import type { AppProps } from 'next/app'
+import { SessionProvider } from "next-auth/react"
 import { ChakraProvider } from '@chakra-ui/react';
 import { extendTheme } from '@chakra-ui/react';
-import Header from '../components/Header';
-import Footer from '../components/Footer';
 import '../styles/globals.css'
 
 const colors = {
@@ -15,11 +14,13 @@ const colors = {
 
 const theme = extendTheme({ colors })
 
-function MyApp({ Component, pageProps }: AppProps) {
+function MyApp({ Component, pageProps: { session, ...pageProps } }: AppProps) {
   return (
-    <ChakraProvider>
-      <Component {...pageProps} />
-    </ChakraProvider>
+    <SessionProvider session={session}>
+      <ChakraProvider>
+        <Component {...pageProps} />
+      </ChakraProvider>
+    </SessionProvider>
   )
 }
 

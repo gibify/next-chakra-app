@@ -4,6 +4,7 @@ import type { NextPage } from 'next';
 import { Box, Button, Drawer, DrawerBody, DrawerCloseButton, DrawerContent, DrawerFooter, DrawerHeader, DrawerOverlay, Link, useDisclosure } from '@chakra-ui/react'
 import styles from './styles.module.css';
 import { HamburgerIcon, StarIcon, IconProps } from '@chakra-ui/icons';
+import { LogOutOutlineIcon } from 'chakra-ui-ionicons';
 
 type Menu = {
   name: string;
@@ -64,7 +65,10 @@ function Header() {
           </DrawerBody>
 
           <DrawerFooter>
-            <Button colorScheme='facebook'>Sair</Button>
+            <Button onClick={onClose} colorScheme='blue'>
+              <LogOutOutlineIcon w={8} h={8} color="wehite" marginRight={4} />
+              Sair
+            </Button>
           </DrawerFooter>
         </DrawerContent>
       </Drawer>

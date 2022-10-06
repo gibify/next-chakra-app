@@ -1,6 +1,6 @@
 import { Box, Heading, Text, Flex, Spacer } from '@chakra-ui/react';
 
-function RegisterSeller() {
+function SellerRegister() {
   return (
     <Box h='100vh' w='100%' display='flex' justifyContent='center' alignItems='center'>
       register seller
@@ -8,4 +8,4 @@ function RegisterSeller() {
   )
 }
 
-export default RegisterSeller;
+export default SellerRegister;

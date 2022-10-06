@@ -1,12 +1,7 @@
-import axios from 'axios';
-import type { GetServerSideProps, NextPage } from 'next'
 import { AddIcon, TrashIcon } from 'chakra-ui-ionicons';
-import { Box, Input, Button, Modal, ModalBody, ModalCloseButton, ModalContent, ModalFooter, ModalHeader, ModalOverlay, Table, TableContainer, Tbody, Td, Text, Tfoot, Th, Thead, Tr, useDisclosure } from '@chakra-ui/react';
+import { Box, Input, Button, Table, TableContainer, Tbody, Td, Text, Tfoot, Th, Thead, Tr, useDisclosure } from '@chakra-ui/react';
 import { EditIcon } from '@chakra-ui/icons';
 import DeleteDialog from '../../components/custom/DeleteDialog';
-import { Data } from '../api/partners';
-import { useEffect } from 'react';
-import { prependOnceListener } from 'process';
 
 const tablesValues = [
   {
@@ -35,9 +30,8 @@ const tablesValues = [
   },
 ]
 
-function Seller(props: Data) {
+function SellerList() {
   const { isOpen, onOpen, onClose } = useDisclosure()
-  console.log(props)
   return (
     <Box h='100vh' p={4}>
       <Box w='100%' display='flex' alignItems='center' justifyContent='space-between' marginY={5} >
@@ -90,7 +84,6 @@ function Seller(props: Data) {
       <DeleteDialog
         isOpen={isOpen}
         onClose={onClose}
-        onOpen={onOpen}
         alertDialogBody='Deseja realmente deletar a loja?'
         alertDialogHeader='Deletar loja'
       />
@@ -98,7 +91,7 @@ function Seller(props: Data) {
   )
 }
 
-export default Seller;
+export default SellerList;
 
 
 

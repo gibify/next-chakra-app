@@ -1,6 +1,6 @@
 import type { NextPage } from 'next'
 import styles from '../styles/Main.module.css'
-import Seller from './seller';
+import SellerList from './seller-list';
 import Header from '.././components/Header';
 import Footer from '.././components/Footer';
 import Login from './login';
@@ -9,7 +9,7 @@ function Home() {
   return (
     <>
       <Header />
-      index
+      <SellerList />
       <Footer />
     </>
   )

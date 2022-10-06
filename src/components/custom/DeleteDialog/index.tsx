@@ -7,18 +7,16 @@ import {
   AlertDialogContent,
   AlertDialogOverlay,
   Button,
-  useDisclosure,
 } from '@chakra-ui/react';
 
 interface DeleteDialogProps {
   isOpen: boolean;
   onClose: () => void;
-  onOpen: () => void;
   alertDialogHeader: string;
   alertDialogBody: string;
 };
 
-function DeleteDialog({ isOpen, onOpen, onClose, alertDialogBody, alertDialogHeader }: DeleteDialogProps) {
+function DeleteDialog({ isOpen, onClose, alertDialogBody, alertDialogHeader }: DeleteDialogProps) {
   const cancelRef = React.useRef(null)
 
   return (
